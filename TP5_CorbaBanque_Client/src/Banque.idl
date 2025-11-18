@@ -1,0 +1,22 @@
+module corbaBanque {
+    struct Compte {
+        long code;
+        float solde;
+    };
+
+    typedef sequence<Compte> tabComptes;
+
+    interface IBanqueRemote {
+        void creerCompte(in Compte cpte);
+
+        void verser(in long code, in float mt);
+
+        void retirer(in long code, in float mt);
+
+        Compte getCompte(in long code);
+
+        tabComptes getComptes();
+
+        double conversion(in float mt);
+    };
+};
